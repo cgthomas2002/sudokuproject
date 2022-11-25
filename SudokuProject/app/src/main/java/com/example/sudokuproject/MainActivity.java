@@ -12,6 +12,8 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    private GenerateSudoku gen = new GenerateSudoku();
+
     private class Cell {
         int val;
         boolean fixed;
@@ -42,14 +44,11 @@ public class MainActivity extends AppCompatActivity {
 
         TableLayout layout = new TableLayout(this);
 
-        for (int n = 0; n < 81; ++n) { //generate random numbers for each cell in the 9x9 grid
-            int num = rand.nextInt(10); //random number between 0-9
-            startStr += num;
-        }
+        int[][] sudokuLayout = gen.GetSudoku();
 
-        for (int i = 0; i < 9; ++i) {
+        for (int i = 0; i < sudokuLayout.length; ++i) {
             TableRow row = new TableRow(this);
-            for (int j = 0; j < 9; ++j) {
+            for (int j = i; j < sudokuLayout[i].length; ++j) {
                 char c = startStr.charAt(i * 9 + j);
                 table[i][j] = new Cell(Character.getNumericValue(c), this);
                 row.addView(table[i][j].button);
