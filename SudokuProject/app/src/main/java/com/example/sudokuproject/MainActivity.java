@@ -3,11 +3,11 @@ package com.example.sudokuproject;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupMenu;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 
@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     int N = 9; //number of rows/columns
-    int K = 20; //number of unknown numbers
+    int K = 1; //number of unknown numbers
 
     GenerateSudoku gen = new GenerateSudoku(N, K);
     int[][] sudokuBoard = gen.getSudoku();
@@ -30,14 +30,11 @@ public class MainActivity extends AppCompatActivity {
             val = startVal;
             fixed = (val != 0 && true) || (false);
             button = new Button(context);
+            button.setBackground(getResources().getDrawable(R.drawable.cellbackground));
             if (fixed) {
                 button.setText(String.valueOf(val));
-                button.setBackgroundColor(Color.GREEN);
             }
-            else {
-                button.setBackgroundColor(Color.CYAN);
-                button.setText("?");
-            }
+
             button.setOnClickListener(view -> {
                 if (fixed) return;
                 ++val;
@@ -51,6 +48,28 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    void createBoard(TableLayout tableLayout, Cell[][] table) {
+        tableLayout.removeAllViews();
+
+        gen = new GenerateSudoku(N, K);
+        sudokuBoard = gen.getSudoku();
+
+        for (int i = 0; i < sudokuBoard.length; ++i) {
+            TableRow row = new TableRow(this);
+            for (int j = 0; j < sudokuBoard[i].length; ++j) {
+                int[] coords = new int[2];
+                coords[0] = i; coords[1] = j;
+                table[i][j] = new Cell(sudokuBoard[i][j], this, coords);
+                row.addView(table[i][j].button);
+            }
+            tableLayout.addView(row);
+        }
+    }
+
+    void showHelp(View v) {
+
     }
 
     boolean isInRange(int[][] board) {
@@ -125,23 +144,39 @@ public class MainActivity extends AppCompatActivity {
         Cell[][] table = new Cell[9][9];
 
         TableLayout tableLayout = new TableLayout(this);
-        LinearLayout linearLayout = new LinearLayout(this);
-
-        for (int i = 0; i < sudokuBoard.length; ++i) {
-            TableRow row = new TableRow(this);
-            for (int j = 0; j < sudokuBoard[i].length; ++j) {
-                int[] coords = new int[2];
-                coords[0] = i; coords[1] = j;
-                table[i][j] = new Cell(sudokuBoard[i][j], this, coords);
-                row.addView(table[i][j].button);
-            }
-            tableLayout.addView(row);
-        }
         tableLayout.setShrinkAllColumns(true);
         tableLayout.setStretchAllColumns(true);
 
+        LinearLayout linearLayout = new LinearLayout(this);
+
+        createBoard(tableLayout, table);
+
         linearLayout.addView(tableLayout);
         linearLayout.setOrientation(LinearLayout.VERTICAL);
+
+        Button settingsButton = new Button(this);
+        settingsButton.setBackground(getResources().getDrawable(R.drawable.settingsbackground));
+        settingsButton.setText("Settings");
+        linearLayout.addView(settingsButton);
+        settingsButton.setOnClickListener(view -> {
+
+        });
+
+        Button helpButton = new Button(this);
+        helpButton.setBackground(getResources().getDrawable(R.drawable.helpbackground));
+        helpButton.setText("Help");
+        linearLayout.addView(helpButton);
+        helpButton.setOnClickListener(view -> {
+            showHelp(linearLayout);
+        });
+
+        Button newGameButton = new Button(this);
+        newGameButton.setBackground(getResources().getDrawable(R.drawable.newgamebackground));
+        newGameButton.setText("New Game");
+        linearLayout.addView(newGameButton);
+        newGameButton.setOnClickListener(view -> {
+            createBoard(tableLayout, table);
+        });
 
         setContentView(linearLayout);
     }
