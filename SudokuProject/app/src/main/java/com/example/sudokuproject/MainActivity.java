@@ -20,7 +20,7 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     int numCells = 9; //number of rows/columns
-    int numUnknowns = 2; //number of unknown numbers
+    int numUnknowns = 1; //number of unknown numbers
 
     int selectedNum;
 
@@ -69,6 +69,14 @@ public class MainActivity extends AppCompatActivity {
         resetSelectedNums();
 
         if (isGameOver(sudokuBoard)) {
+            Toast.makeText(this, "Game over!", Toast.LENGTH_LONG).show();
+
+            try {
+                Thread.sleep(3000);
+            } catch(InterruptedException e) {
+                System.out.println("got interrupted!");
+            }
+
             resetBoard();
         }
     }
