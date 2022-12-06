@@ -130,7 +130,7 @@ public class GenerateSudoku {
         while (count != 0) {
             int cellId = randomGenerator(N * N) - 1;
 
-            int i = (cellId/N);
+            int i = cellId/N;
             int j = cellId%9;
             if (j != 0)
                 j = j - 1;

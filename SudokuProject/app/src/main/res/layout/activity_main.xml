@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
+    android:id="@+id/linearLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,200 +10,548 @@
     android:orientation="vertical">
 
     <TableLayout
+        android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:shrinkColumns="true"
-        android:stretchColumns="true">
+        android:stretchColumns="*">
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
         <TableRow>
-            <Button
+
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
-            <Button
+            <android.widget.Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="@drawable/cellbackground" />
         </TableRow>
 
     </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/selectButtonsGroup"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".7"
+        android:orientation="horizontal">
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="1"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="2"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="3"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="4"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="5"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="6"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="7"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="8"
+            android:background="@drawable/selectbackground"/>
+
+        <android.widget.Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="9"
+            android:background="@drawable/selectbackground"/>
+    </LinearLayout>
+
+    <android.widget.Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/settingsbackground"
+        android:text="Settings"
+        android:id="@+id/settingsButton"/>
+
+    <android.widget.Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/helpbackground"
+        android:text="Help"
+        android:id="@+id/helpButton"/>
+
+    <android.widget.Button
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/newgamebackground"
+        android:text="New Game"
+        android:id="@+id/newGameButton"/>
 
 </LinearLayout>
