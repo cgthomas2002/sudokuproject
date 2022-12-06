@@ -1,39 +1,37 @@
 package com.example.sudokuproject;
 
-//ALGORITHM CREATED BY GeeksForGeeks
-
 import java.lang.*;
 
 public class GenerateSudoku {
     int[][] board;
     int numCells; // number of columns / rows
-    int SRN; // square root of N
-    int numUnknowns; // No. Of missing digits
+    int sqrtNumCells; // square root of numCells
+    int numUnknowns; // number of unknown numbers
 
     GenerateSudoku(int N, int K) {
         this.numCells = N;
         this.numUnknowns = K;
 
-        SRN = (int) Math.sqrt(N);
+        sqrtNumCells = (int) Math.sqrt(N);
 
         board = new int[N][N];
 
         fillDiagonal();
 
-        fillRemaining(0, SRN);
+        fillRemaining(0, sqrtNumCells);
 
         removeKDigits();
     }
 
     void fillDiagonal() {
-        for (int i = 0; i < numCells; i = i + SRN) {
+        for (int i = 0; i < numCells; i = i + sqrtNumCells) {
             fillBox(i, i);
         }
     }
 
     boolean unUsedInBox(int rowStart, int colStart, int num) {
-        for (int i = 0; i < SRN; ++i) {
-            for (int j = 0; j < SRN; ++j) {
+        for (int i = 0; i < sqrtNumCells; ++i) {
+            for (int j = 0; j < sqrtNumCells; ++j) {
                 if (board[rowStart + i][colStart + j] == num) {
                     return false;
                 }
@@ -45,8 +43,8 @@ public class GenerateSudoku {
 
     void fillBox(int row,int col) {
         int num;
-        for (int i = 0; i < SRN; ++i) {
-            for (int j = 0; j < SRN; ++j) {
+        for (int i = 0; i < sqrtNumCells; ++i) {
+            for (int j = 0; j < sqrtNumCells; ++j) {
                 do {
                     num = randomGenerator(numCells);
                 }
@@ -61,8 +59,10 @@ public class GenerateSudoku {
         return (int) Math.floor((Math.random() * num + 1));
     }
 
-    boolean CheckIfSafe(int i,int j,int num) {
-        return (unUsedInRow(i, num) && unUsedInCol(j, num) && unUsedInBox(i - i % SRN, j - j % SRN, num));
+    boolean checkIfSafe(int i,int j,int num) {
+        return (unUsedInRow(i, num) &&
+                unUsedInCol(j, num) &&
+                unUsedInBox(i - i % sqrtNumCells, j - j % sqrtNumCells, num));
     }
 
     boolean unUsedInRow(int i, int num) {
@@ -93,18 +93,18 @@ public class GenerateSudoku {
             return true;
         }
 
-        if (i < SRN) {
-            if (j < SRN) {
-                j = SRN;
+        if (i < sqrtNumCells) {
+            if (j < sqrtNumCells) {
+                j = sqrtNumCells;
             }
         }
-        else if (i < numCells - SRN) {
-            if (j == (int) (i / SRN) * SRN) {
-                j += SRN;
+        else if (i < numCells - sqrtNumCells) {
+            if (j == (int) (i / sqrtNumCells) * sqrtNumCells) {
+                j += sqrtNumCells;
             }
         }
         else {
-            if (j == numCells - SRN) {
+            if (j == numCells - sqrtNumCells) {
                 ++i;
                 j = 0;
                 if (i >= numCells) {
@@ -114,7 +114,7 @@ public class GenerateSudoku {
         }
 
         for (int num = 1; num <= numCells; ++num) {
-            if (CheckIfSafe(i, j, num)) {
+            if (checkIfSafe(i, j, num)) {
                 board[i][j] = num;
                 if (fillRemaining(i, j + 1)) {
                     return true;
