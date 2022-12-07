@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popup"
+    android:layout_width="240dp"
+    android:layout_height="285dp"
+    android:background="@drawable/customborder">
+
+    <TextView
+        android:id="@+id/youWin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="You Win!"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+    </TextView>
+
+    <android.widget.Button
+        android:id="@+id/close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Close"
+        android:layout_centerHorizontal="true"
+        android:translationY="200dp"
+        android:background="@drawable/buttonbackground"
+        />
+
+</RelativeLayout>

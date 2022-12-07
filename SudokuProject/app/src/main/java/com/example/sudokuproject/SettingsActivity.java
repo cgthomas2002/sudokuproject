@@ -14,15 +14,9 @@ import androidx.appcompat.widget.SwitchCompat;
 
 public class SettingsActivity extends AppCompatActivity {
     String difficultySelected;
-    boolean isDark;
 
-    SwitchCompat themeSwitch;
     RadioGroup radioGroup;
     Button doneButton;
-
-    void onSwitchClick(CompoundButton button, boolean isChecked) {
-        isDark = isChecked;
-    }
 
     void onRadioButtonClick(View button) {
         if (button.getId() == R.id.difficulty_easy) {
@@ -42,7 +36,6 @@ public class SettingsActivity extends AppCompatActivity {
     void onDoneButtonClick(View button) {
         Intent intent = new Intent();
         intent.putExtra("difficulty", difficultySelected);
-        intent.putExtra("isDark", isDark);
         setResult(RESULT_OK, intent);
         finish();
     }
@@ -54,13 +47,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         difficultySelected = intent.getStringExtra("difficulty");
-        isDark = intent.getBooleanExtra("isDark", false);
 
         radioGroup = findViewById(R.id.difficultyGroup);
-        themeSwitch = (SwitchCompat) findViewById(R.id.themeSwitch);
         doneButton = (Button) findViewById(R.id.finishSettings);
 
-        themeSwitch.setChecked(isDark);
         if (difficultySelected.equals("easy")) {
             RadioButton b = findViewById(R.id.difficulty_easy);
             b.setChecked(true);
@@ -78,7 +68,6 @@ public class SettingsActivity extends AppCompatActivity {
             b.setChecked(true);
         }
 
-        themeSwitch.setOnCheckedChangeListener(this::onSwitchClick);
         for (int i = 0; i < radioGroup.getChildCount(); ++i) {
             RadioButton button = (RadioButton) radioGroup.getChildAt(i);
             button.setOnClickListener(this::onRadioButtonClick);

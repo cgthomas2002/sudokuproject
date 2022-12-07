@@ -5,11 +5,15 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
@@ -21,9 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     int numCells = 9; //number of rows/columns
     int numUnknowns = 20; //number of unknown numbers
+    int sqrtNumCells = (int) Math.sqrt(numCells);
 
     String currentDifficulty = "normal";
-    Boolean isDark = false;
 
     int selectedNum;
 
@@ -56,6 +60,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void onCellClick(View view) {
+        LayoutInflater inflater = (LayoutInflater) MainActivity.this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         if (selectedNum == 0) {
             return;
         }
@@ -72,15 +78,15 @@ public class MainActivity extends AppCompatActivity {
         resetSelectedNums();
 
         if (isGameOver(sudokuBoard)) {
-            Toast.makeText(this, "Game over!", Toast.LENGTH_LONG).show();
+            View layout = inflater.inflate(R.layout.winner, null);
 
-            /*try {
-                Thread.sleep(3000);
-            } catch(InterruptedException e) {
-                System.out.println("got interrupted!");
-            }*/
+            PopupWindow popup = new PopupWindow(layout, 500, 750, true);
 
-           // resetBoard();
+            (layout.findViewById(R.id.close)).setOnClickListener(v -> {
+                popup.dismiss();
+            });
+
+            popup.showAtLocation(layout, Gravity.CENTER, 0 , 0);
         }
     }
 
@@ -107,31 +113,22 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    void setBoardTheme() {
-        if (isDark) {
-
-        }
-        else {
-
-        }
-    }
-
     void createBoard() {
         GenerateSudoku gen = new GenerateSudoku(numCells, numUnknowns);
         sudokuBoard = gen.getSudoku();
     }
 
     void resetBoard() {
-        if (currentDifficulty == "easy") {
+        if (currentDifficulty.equals("easy")) {
             numUnknowns = 10;
         }
-        else if (currentDifficulty == "normal") {
+        else if (currentDifficulty.equals("normal")) {
             numUnknowns = 20;
         }
-        else if (currentDifficulty == "hard") {
+        else if (currentDifficulty.equals("hard")) {
             numUnknowns = 30;
         }
-        else if (currentDifficulty == "demo") {
+        else if (currentDifficulty.equals("demo")) {
             numUnknowns = 2;
         }
         createBoard();
@@ -146,7 +143,6 @@ public class MainActivity extends AppCompatActivity {
     void showSettings() {
         Intent intent = new Intent(this, SettingsActivity.class);
         intent.putExtra("difficulty", currentDifficulty);
-        intent.putExtra("isDark", isDark);
         settingsResultLauncher.launch(intent);
     }
 
@@ -157,14 +153,11 @@ public class MainActivity extends AppCompatActivity {
             Intent data = result.getData();
             if (data != null) {
                 String newDifficulty = data.getStringExtra("difficulty");
-                isDark = data.getBooleanExtra("isDark", false);
 
                 if (!newDifficulty.equals(currentDifficulty)) {
                     currentDifficulty = newDifficulty;
                     resetBoard();
                 }
-
-                setBoardTheme();
             }
         }
     });

@@ -12,8 +12,6 @@ public class GenerateSudoku {
         this.numCells = N;
         this.numUnknowns = K;
 
-        System.out.println(numUnknowns);
-
         sqrtNumCells = (int) Math.sqrt(N);
 
         board = new int[N][N];

@@ -7,31 +7,15 @@
 
     <TextView
         android:textSize="30sp"
-        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
+        android:gravity="left"
         android:text="Settings"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:gravity="left"
-        android:text="Theme (Light/Dark)"
-        android:textSize="20sp"/>
-
-    <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/themeSwitch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="4dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="25dp"
         android:gravity="left"
         android:text="Difficulty"
         android:textSize="20sp"/>
@@ -70,5 +54,14 @@
         android:background="@drawable/buttonbackground"
         android:text="Done"
         android:id="@+id/finishSettings"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:gravity="left"
+        android:text="Warning! Changing the difficulty will reset your game!"
+        android:textSize="15sp"
+        android:textColor="@color/warning"/>
 
 </LinearLayout>
