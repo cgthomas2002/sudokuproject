@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:textSize="30sp"
+        android:layout_margin="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Settings"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:gravity="left"
+        android:text="Theme (Light/Dark)"
+        android:textSize="20sp"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/themeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="4dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="left"
+        android:text="Difficulty"
+        android:textSize="20sp"/>
+
+    <RadioGroup
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/difficultyGroup">
+
+        <RadioButton android:id="@+id/difficulty_easy"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Easy"/>
+
+        <RadioButton android:id="@+id/difficulty_normal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Normal"/>
+
+        <RadioButton android:id="@+id/difficulty_hard"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Hard"/>
+
+        <RadioButton android:id="@+id/difficulty_demo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Demo"/>
+    </RadioGroup>
+
+    <android.widget.Button
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/buttonbackground"
+        android:text="Done"
+        android:id="@+id/finishSettings"/>
+
+</LinearLayout>

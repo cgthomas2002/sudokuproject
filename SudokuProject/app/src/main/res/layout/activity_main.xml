@@ -534,7 +534,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/settingsbackground"
+        android:background="@drawable/buttonbackground"
         android:text="Settings"
         android:id="@+id/settingsButton"/>
 
@@ -542,7 +542,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/helpbackground"
+        android:background="@drawable/buttonbackground"
         android:text="Help"
         android:id="@+id/helpButton"/>
 
@@ -550,7 +550,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="@drawable/newgamebackground"
+        android:background="@drawable/buttonbackground"
         android:text="New Game"
         android:id="@+id/newGameButton"/>
 

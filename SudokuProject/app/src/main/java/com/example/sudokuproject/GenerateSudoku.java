@@ -12,6 +12,8 @@ public class GenerateSudoku {
         this.numCells = N;
         this.numUnknowns = K;
 
+        System.out.println(numUnknowns);
+
         sqrtNumCells = (int) Math.sqrt(N);
 
         board = new int[N][N];
@@ -20,7 +22,7 @@ public class GenerateSudoku {
 
         fillRemaining(0, sqrtNumCells);
 
-        removeKDigits();
+        createUnknowns();
     }
 
     void fillDiagonal() {
@@ -126,15 +128,17 @@ public class GenerateSudoku {
         return false;
     }
 
-    void removeKDigits() {
+    void createUnknowns() {
         int count = numUnknowns;
         while (count != 0) {
             int cellId = randomGenerator(numCells * numCells) - 1;
 
             int i = cellId / numCells;
             int j = cellId % numCells;
-            if (j != 0)
+
+            if (j != 0) {
                 --j;
+            }
 
             if (board[i][j] != 0) {
                 --count;

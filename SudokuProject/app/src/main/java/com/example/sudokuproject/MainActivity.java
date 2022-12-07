@@ -1,26 +1,29 @@
 package com.example.sudokuproject;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.PopupMenu;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.Toast;
-
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     int numCells = 9; //number of rows/columns
-    int numUnknowns = 1; //number of unknown numbers
+    int numUnknowns = 20; //number of unknown numbers
+
+    String currentDifficulty = "normal";
+    Boolean isDark = false;
 
     int selectedNum;
 
@@ -71,13 +74,13 @@ public class MainActivity extends AppCompatActivity {
         if (isGameOver(sudokuBoard)) {
             Toast.makeText(this, "Game over!", Toast.LENGTH_LONG).show();
 
-            try {
+            /*try {
                 Thread.sleep(3000);
             } catch(InterruptedException e) {
                 System.out.println("got interrupted!");
-            }
+            }*/
 
-            resetBoard();
+           // resetBoard();
         }
     }
 
@@ -104,19 +107,67 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    void setBoardTheme() {
+        if (isDark) {
+
+        }
+        else {
+
+        }
+    }
+
     void createBoard() {
         GenerateSudoku gen = new GenerateSudoku(numCells, numUnknowns);
         sudokuBoard = gen.getSudoku();
     }
 
     void resetBoard() {
+        if (currentDifficulty == "easy") {
+            numUnknowns = 10;
+        }
+        else if (currentDifficulty == "normal") {
+            numUnknowns = 20;
+        }
+        else if (currentDifficulty == "hard") {
+            numUnknowns = 30;
+        }
+        else if (currentDifficulty == "demo") {
+            numUnknowns = 2;
+        }
         createBoard();
         setGameState();
     }
 
     void showHelp() {
-
+        Intent intent = new Intent(this, HelpActivity.class);
+        startActivity(intent);
     }
+
+    void showSettings() {
+        Intent intent = new Intent(this, SettingsActivity.class);
+        intent.putExtra("difficulty", currentDifficulty);
+        intent.putExtra("isDark", isDark);
+        settingsResultLauncher.launch(intent);
+    }
+
+    ActivityResultLauncher<Intent> settingsResultLauncher = registerForActivityResult(
+    new ActivityResultContracts.StartActivityForResult(),
+    result -> {
+        if (result.getResultCode() == Activity.RESULT_OK) {
+            Intent data = result.getData();
+            if (data != null) {
+                String newDifficulty = data.getStringExtra("difficulty");
+                isDark = data.getBooleanExtra("isDark", false);
+
+                if (!newDifficulty.equals(currentDifficulty)) {
+                    currentDifficulty = newDifficulty;
+                    resetBoard();
+                }
+
+                setBoardTheme();
+            }
+        }
+    });
 
     boolean isInRange(int[][] board) {
         for(int i = 0; i < numCells; ++i) {
@@ -219,6 +270,10 @@ public class MainActivity extends AppCompatActivity {
 
         int[] values = flattenMatrix(sudokuBoard);
         savedInstanceState.putIntArray("savedBoard", values);
+
+       // savedInstanceState.putString("difficulty", currentDifficulty);
+
+       // savedInstanceState.putBoolean("isDark", isDark);
     }
 
 
@@ -234,16 +289,22 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             int[] savedBoard = savedInstanceState.getIntArray("savedBoard");
             sudokuBoard = unflattenArray(savedBoard);
+
+           // currentDifficulty = savedInstanceState.getString("difficulty");
+           // isDark = savedInstanceState.getBoolean("isDark");
         }
         else {
             createBoard();
+
+           // currentDifficulty = "normal";
+           // isDark = false;
         }
 
         setGameState();
 
         Button settingsButton = findViewById(R.id.settingsButton);
         settingsButton.setOnClickListener(view -> {
-
+            showSettings();
         });
 
         Button helpButton = findViewById(R.id.helpButton);
